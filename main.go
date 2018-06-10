@@ -40,7 +40,7 @@ func main() {
 		}
 	})
 
-	if err := http.ListenAndServeTLS("0.0.0.0:"+os.Getenv("PORT"), "cert.pem", "key.pem", nil); err != nil {
+	if err := http.ListenAndServe(":"+os.Getenv("PORT"), nil); err != nil {
 		log.Fatal(err)
 	}
 }
